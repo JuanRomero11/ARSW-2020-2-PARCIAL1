@@ -16,7 +16,7 @@ public class PrimesFinderTool {
 
     public static void main(String[] args) throws InterruptedException {
         int numeroThreads = 4;
-        int maxPrim = 1000;
+        int maxPrim = 100;
         PrimeFinder[] hilos = new PrimeFinder[numeroThreads];
         PrimesResultSet prs = new PrimesResultSet("john");
         for (int i = 0; i < numeroThreads; i++) {
@@ -26,12 +26,14 @@ public class PrimesFinderTool {
         }
 
         for (int x = 0; x < numeroThreads; x++) {
+            System.out.println("entre");
             hilos[x].join();
-            System.out.println("Prime numbers found:");
-
-            System.out.println(prs.getPrimes());
+            System.out.println("termine");
             
         }
+        
+        System.out.println("Prime numbers found:");
+        System.out.println(prs.getPrimes());
 
         /*while(task_not_finished){
                 try {
