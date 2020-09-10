@@ -24,12 +24,9 @@ public class PrimesFinderTool {
             hilos[i] = new PrimeFinder(new BigInteger(Integer.toString(i * maxPrim / numeroThreads)), new BigInteger(Integer.toString((i + 1) * maxPrim / numeroThreads)), prs);
             hilos[i].start();
         }
-
+      
         for (int x = 0; x < numeroThreads; x++) {
-            System.out.println("entre");
             hilos[x].join();
-            System.out.println("termine");
-            
         }
         
         System.out.println("Prime numbers found:");

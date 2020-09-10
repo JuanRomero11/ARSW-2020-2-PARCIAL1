@@ -12,6 +12,12 @@ public class FoundPrime
 
     public FoundPrime()
     {
+        
+    }
+
+    public FoundPrime(String n, String st) {
+        user=n;
+        prime=st;
     }
 
     public String getUser()
